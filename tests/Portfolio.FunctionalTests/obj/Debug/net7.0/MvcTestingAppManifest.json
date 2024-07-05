@@ -1,0 +1,7 @@
+{
+  "Portfolio.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\F\\mine\\ReactProject\\GitFolder\\PortfolioAPI\\Portfolio\\src\\Portfolio.Core",
+  "Portfolio.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\F\\mine\\ReactProject\\GitFolder\\PortfolioAPI\\Portfolio\\src\\Portfolio.Infrastructure",
+  "Portfolio.UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\F\\mine\\ReactProject\\GitFolder\\PortfolioAPI\\Portfolio\\tests\\Portfolio.UnitTests",
+  "Portfolio.UseCases, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\F\\mine\\ReactProject\\GitFolder\\PortfolioAPI\\Portfolio\\src\\Portfolio.UseCases",
+  "Portfolio.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\F\\mine\\ReactProject\\GitFolder\\PortfolioAPI\\Portfolio\\src\\Portfolio.Web"
+}

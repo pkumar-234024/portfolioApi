@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Portfolio.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Portfolio.Web.ContributorEndpoints.Create">
+            <summary>
+            Create a new Contributor
+            </summary>
+            <remarks>
+            Creates a new Contributor given a name.
+            </remarks>
+        </member>
+        <member name="T:Portfolio.Web.ContributorEndpoints.Delete">
+            <summary>
+            Delete a Contributor.
+            </summary>
+            <remarks>
+            Delete a Contributor by providing a valid integer id.
+            </remarks>
+        </member>
+        <member name="T:Portfolio.Web.ContributorEndpoints.GetById">
+            <summary>
+            Get a Contributor by integer ID.
+            </summary>
+            <remarks>
+            Takes a positive integer ID and returns a matching Contributor record.
+            </remarks>
+        </member>
+        <member name="T:Portfolio.Web.ContributorEndpoints.List">
+            <summary>
+            List all Contributors
+            </summary>
+            <remarks>
+            List all contributors - returns a ContributorListResponse containing the Contributors.
+            </remarks>
+        </member>
+        <member name="T:Portfolio.Web.ContributorEndpoints.Update">
+            <summary>
+            Update an existing Contributor.
+            </summary>
+            <remarks>
+            Update an existing Contributor by providing a fully defined replacement set of values.
+            See: https://stackoverflow.com/questions/60761955/rest-update-best-practice-put-collection-id-without-id-in-body-vs-put-collecti
+            </remarks>
+        </member>
+        <member name="T:Portfolio.Web.Endpoints.ContributorEndpoints.CreateContributorValidator">
+            <summary>
+            See: https://fast-endpoints.com/docs/validation
+            </summary>
+        </member>
+        <member name="T:Portfolio.Web.Endpoints.ContributorEndpoints.DeleteContributorValidator">
+            <summary>
+            See: https://fast-endpoints.com/docs/validation
+            </summary>
+        </member>
+        <member name="T:Portfolio.Web.Endpoints.ContributorEndpoints.GetContributorValidator">
+            <summary>
+            See: https://fast-endpoints.com/docs/validation
+            </summary>
+        </member>
+        <member name="T:Portfolio.Web.Endpoints.ContributorEndpoints.UpdateContributorValidator">
+            <summary>
+            See: https://fast-endpoints.com/docs/validation
+            </summary>
+        </member>
+    </members>
+</doc>
