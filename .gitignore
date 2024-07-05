@@ -1,0 +1,5 @@
+.vs/
+src/Portfolio.Core/obj/
+src/Portfolio.Infrastructure/obj/
+src/Portfolio.UseCases/obj/
+src/Portfolio.Web/obj/
