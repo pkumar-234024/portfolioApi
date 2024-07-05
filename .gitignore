@@ -3,3 +3,17 @@ src/Portfolio.Core/obj/
 src/Portfolio.Infrastructure/obj/
 src/Portfolio.UseCases/obj/
 src/Portfolio.Web/obj/
+/src/Portfolio.Core/bin
+/src/Portfolio.Core/obj
+/src/Portfolio.Infrastructure/bin
+/src/Portfolio.Infrastructure/obj
+/src/Portfolio.UseCases/obj
+/src/Portfolio.UseCases/bin
+/src/Portfolio.Web/obj
+/src/Portfolio.Web/bin
+/tests/Portfolio.FunctionalTests/obj
+/tests/Portfolio.FunctionalTests/bin
+/tests/Portfolio.IntegrationTests/obj
+/tests/Portfolio.IntegrationTests/bin
+/tests/Portfolio.UnitTests/obj
+/tests/Portfolio.UnitTests/bin
