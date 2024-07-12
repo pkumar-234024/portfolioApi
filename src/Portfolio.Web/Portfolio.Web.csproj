@@ -12,6 +12,13 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <Compile Remove="Users\**" />
+    <Content Remove="Users\**" />
+    <EmbeddedResource Remove="Users\**" />
+    <None Remove="Users\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <PackageReference Include="Ardalis.ListStartupServices" />
     <PackageReference Include="Ardalis.Result" />
     <PackageReference Include="Ardalis.Result.AspNetCore" />
@@ -34,10 +41,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Portfolio.Infrastructure\Portfolio.Infrastructure.csproj" />
     <ProjectReference Include="..\Portfolio.UseCases\Portfolio.UseCases.csproj" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Folder Include="Users\" />
   </ItemGroup>
   
 </Project>
