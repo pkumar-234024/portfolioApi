@@ -11,6 +11,7 @@ using MediatR;
 using MediatR.Pipeline;
 using Module = Autofac.Module;
 using Portfolio.Core.Modal;
+using Portfolio.UseCases.User.List;
 
 namespace Portfolio.Infrastructure;
 
@@ -79,6 +80,7 @@ public class AutofacInfrastructureModule : Module
 
   private void RegisterMediatR(ContainerBuilder builder)
   {
+
     builder
       .RegisterType<Mediator>()
       .As<IMediator>()
@@ -109,6 +111,8 @@ public class AutofacInfrastructureModule : Module
         .AsClosedTypesOf(mediatrOpenType)
         .AsImplementedInterfaces();
     }
+    //builder.RegisterAssemblyTypes(typeof(ListUsersQuery).Assembly)
+    //       .AsImplementedInterfaces();
   }
 
   private void RegisterDevelopmentOnlyDependencies(ContainerBuilder builder)

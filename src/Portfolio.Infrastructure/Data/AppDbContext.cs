@@ -19,6 +19,18 @@ public class AppDbContext : DbContext
   public DbSet<Contributor> Contributors => Set<Contributor>();
   public DbSet<Users> Users => Set<Users>();
 
+  public DbSet<Projects> Projects => Set<Projects>();
+
+  public DbSet<ProjectTechnologies> ProjectTechnologies => Set<ProjectTechnologies>();
+
+  public DbSet<Skills> Skills => Set<Skills>();
+
+
+  public DbSet<Tools> Tools => Set<Tools>();
+
+  public DbSet<SocialMediaAccount> SocialMediaAccount => Set<SocialMediaAccount>();
+  public DbSet<UserDocument> UserDocument => Set<UserDocument>();
+
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     base.OnModelCreating(modelBuilder);

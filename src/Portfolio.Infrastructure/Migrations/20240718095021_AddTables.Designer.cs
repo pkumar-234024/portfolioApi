@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Portfolio.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using Portfolio.Infrastructure.Data;
 namespace Portfolio.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240718095021_AddTables")]
+    partial class AddTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,47 +44,6 @@ namespace Portfolio.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Contributors");
-                });
-
-            modelBuilder.Entity("Portfolio.Core.Modal.ProjectTechnologies", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("BackENdTechnology")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DatabseTechnology")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ForntEndTechnology")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("IsDeletedBy")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Technology")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProjectTechnologies");
                 });
 
             modelBuilder.Entity("Portfolio.Core.Modal.Projects", b =>
@@ -126,9 +88,6 @@ namespace Portfolio.Infrastructure.Migrations
                     b.Property<int>("ProjectTechnologies")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ProjectTechnologiesId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProjectTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -144,24 +103,9 @@ namespace Portfolio.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProjectTechnologiesId");
-
                     b.HasIndex("UsersId");
 
                     b.ToTable("Projects");
-                });
-
-            modelBuilder.Entity("Portfolio.Core.Modal.Skills", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Skills");
                 });
 
             modelBuilder.Entity("Portfolio.Core.Modal.SocialMediaAccount", b =>
@@ -201,19 +145,6 @@ namespace Portfolio.Infrastructure.Migrations
                     b.HasIndex("UsersId");
 
                     b.ToTable("SocialMediaAccount");
-                });
-
-            modelBuilder.Entity("Portfolio.Core.Modal.Tools", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tools");
                 });
 
             modelBuilder.Entity("Portfolio.Core.Modal.UserDocument", b =>
@@ -314,10 +245,6 @@ namespace Portfolio.Infrastructure.Migrations
 
             modelBuilder.Entity("Portfolio.Core.Modal.Projects", b =>
                 {
-                    b.HasOne("Portfolio.Core.Modal.ProjectTechnologies", null)
-                        .WithMany("Projects")
-                        .HasForeignKey("ProjectTechnologiesId");
-
                     b.HasOne("Portfolio.Core.Modal.Users", null)
                         .WithMany("Projects")
                         .HasForeignKey("UsersId");
@@ -335,11 +262,6 @@ namespace Portfolio.Infrastructure.Migrations
                     b.HasOne("Portfolio.Core.Modal.Users", null)
                         .WithMany("UserDocument")
                         .HasForeignKey("UsersId");
-                });
-
-            modelBuilder.Entity("Portfolio.Core.Modal.ProjectTechnologies", b =>
-                {
-                    b.Navigation("Projects");
                 });
 
             modelBuilder.Entity("Portfolio.Core.Modal.Users", b =>
