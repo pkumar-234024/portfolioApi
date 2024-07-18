@@ -25,5 +25,5 @@ public  class ProjectTechnologies : EntityBase, IAggregateRoot
   public bool? IsDeletedBy { get; set; }
   public DateTime? ModifiedDate { get; set; }
 
-  public virtual IEnumerable<Projects> Projects { get; set; } = new List<Projects>();
+  public virtual Projects? Projects { get; set; }
 }

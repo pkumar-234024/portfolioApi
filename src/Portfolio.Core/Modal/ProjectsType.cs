@@ -8,13 +8,13 @@ public class ProjectsType : EntityBase, IAggregateRoot
   [Required]
   public required string ProjectType { get; set; }
 
-  public DateTime CreatedDate { get; set; } = new DateTime();
 
+  public DateTime? CreatedDate { get; set; }
   public int? CreadtedBy { get; set; }
   public bool? IsDeleted { get; set; }
 
   public bool? IsDeletedBy { get; set; }
   public DateTime? ModifiedDate { get; set; }
 
-  public virtual ICollection<Projects> Projects { get; set; } = new Collection<Projects>();
+  public virtual Projects? Projects { get; set; }
 }

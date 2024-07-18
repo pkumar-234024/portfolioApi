@@ -15,7 +15,7 @@ public class Projects : EntityBase, IAggregateRoot
 
   [ForeignKey(nameof(ProjectsType))]
   [Required]
-  public int ProjectsTypeId { get; set; }
+  public int ProjectsType { get; set; }
 
   [ForeignKey(nameof(ProjectTechnologies))]
   [Required]

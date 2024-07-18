@@ -43,4 +43,8 @@
     <ProjectReference Include="..\Portfolio.UseCases\Portfolio.UseCases.csproj" />
   </ItemGroup>
   
+  <ItemGroup>
+    <Folder Include="logfile\" />
+  </ItemGroup>
+  
 </Project>

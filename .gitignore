@@ -17,3 +17,4 @@ src/Portfolio.Web/obj/
 /tests/Portfolio.IntegrationTests/bin
 /tests/Portfolio.UnitTests/obj
 /tests/Portfolio.UnitTests/bin
+src/Portfolio.Web/logfile/
