@@ -29,7 +29,7 @@ public class Delete : Endpoint<DeleteContributorRequest>
 
   public override async Task HandleAsync(
     DeleteContributorRequest request,
-    CancellationToken cancellationToken)
+    CancellationToken ct)
   {
     var command = new DeleteContributorCommand(request.ContributorId);
 
@@ -37,14 +37,14 @@ public class Delete : Endpoint<DeleteContributorRequest>
 
     if (result.Status == ResultStatus.NotFound)
     {
-      await SendNotFoundAsync(cancellationToken);
+      await SendNotFoundAsync(ct);
       return;
     }
 
     if (result.IsSuccess)
     {
-      await SendNoContentAsync(cancellationToken);
-    };
-    // TODO: Handle other issues as needed
+      await SendNoContentAsync(ct);
+    }
+   
   }
 }

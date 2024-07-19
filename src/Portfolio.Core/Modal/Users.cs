@@ -5,6 +5,10 @@ namespace Portfolio.Core.Modal;
 
 public class Users : EntityBase, IAggregateRoot
 {
+  public Users()
+  {
+
+  }
   [Required]
   public required string FirstName { get; set; }
 
@@ -22,8 +26,8 @@ public class Users : EntityBase, IAggregateRoot
   public string? Country { get; set; } = string.Empty;  
   [Required]
   public required string? Email { get; set; }
-  [Required]
-  public required string? UserId { get; set; }
+ 
+  public int? UserId { get; set; }
   public string? Password { get; set; } = string.Empty;
   public string? ContactNumber { get; set; } = string.Empty;
 

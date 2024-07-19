@@ -35,21 +35,21 @@ public class Update : Endpoint<UpdateContributorRequest, UpdateContributorRespon
 
   public override async Task HandleAsync(
     UpdateContributorRequest request,
-    CancellationToken cancellationToken)
+    CancellationToken ct)
   {
     var result = await _mediator.Send(new UpdateContributorCommand(request.Id, request.Name!));
 
     if (result.Status == ResultStatus.NotFound)
     {
-      await SendNotFoundAsync(cancellationToken);
+      await SendNotFoundAsync(ct);
       return;
     }
 
-    // TODO: Use Mediator
-    var existingContributor = await _repository.GetByIdAsync(request.Id, cancellationToken);
+    
+    var existingContributor = await _repository.GetByIdAsync(request.Id, ct);
     if (existingContributor == null)
     {
-      await SendNotFoundAsync(cancellationToken);
+      await SendNotFoundAsync(ct);
       return;
     }
 

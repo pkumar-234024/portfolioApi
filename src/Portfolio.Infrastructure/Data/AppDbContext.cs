@@ -31,6 +31,8 @@ public class AppDbContext : DbContext
   public DbSet<SocialMediaAccount> SocialMediaAccount => Set<SocialMediaAccount>();
   public DbSet<UserDocument> UserDocument => Set<UserDocument>();
 
+  public DbSet<ErrorLogs> ErrorLogs => Set<ErrorLogs>();
+
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     base.OnModelCreating(modelBuilder);

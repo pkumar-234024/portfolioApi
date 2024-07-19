@@ -20,7 +20,7 @@ public class List : EndpointWithoutRequest<ProjectsListResponse>
     AllowAnonymous();
   }
 
-  public override async Task HandleAsync(CancellationToken cancellationToken)
+  public override async Task HandleAsync(CancellationToken ct)
   {
     var result = await _mediator.Send(new ListProjectsQuery(null, null));
 

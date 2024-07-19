@@ -12,6 +12,7 @@ using MediatR.Pipeline;
 using Module = Autofac.Module;
 using Portfolio.Core.Modal;
 using Portfolio.UseCases.User.List;
+using Portfolio.Infrastructure.Errors;
 
 namespace Portfolio.Infrastructure;
 
@@ -121,6 +122,9 @@ public class AutofacInfrastructureModule : Module
     builder.RegisterType<FakeEmailSender>().As<IEmailSender>()
       .InstancePerLifetimeScope();
 
+    builder.RegisterType<ErrorMessageLogger>().As<IErrorLogger>()
+      .InstancePerLifetimeScope();
+
     builder.RegisterType<FakeListContributorsQueryService>()
       .As<IListContributorsQueryService>()
       .InstancePerLifetimeScope();
@@ -131,6 +135,9 @@ public class AutofacInfrastructureModule : Module
   {
     // NOTE: Add any production only (real) services here
     builder.RegisterType<SmtpEmailSender>().As<IEmailSender>()
+      .InstancePerLifetimeScope();
+
+    builder.RegisterType<ErrorMessageLogger>().As<IErrorLogger>()
       .InstancePerLifetimeScope();
 
     builder.RegisterType<ListContributorsQueryService>()
