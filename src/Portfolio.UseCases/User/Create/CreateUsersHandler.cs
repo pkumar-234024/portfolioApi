@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Portfolio.Core.Interfaces;
 using Portfolio.Core.Modal;
 using Portfolio.UseCases.Contributors.Create;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Portfolio.UseCases.User.Create;
 public class CreateUsersHandler : ICommandHandler<CreateUsersCommand, Result<Users>>
@@ -29,20 +30,14 @@ public class CreateUsersHandler : ICommandHandler<CreateUsersCommand, Result<Use
     {
       var newUser = request.users;
       newUser.CreatedDate = DateTime.Now;
-      newUser.Email = null;
       var createdItem = await _users.AddAsync(newUser, cancellationToken);
       return createdItem;
     }
     catch (Exception ex)
     {
-      Console.WriteLine(ex);
-      await _errorLogger.SaveErrotrLogAsync(ex.Message, ex.GetBaseException().Message, ex.StackTrace, 1, "createUser");
-      //var newError = new ErrorLogs { ContollerName = "createUser", InnerMessage = ex.GetBaseException().Message.ToString(), Message = ex.Message.ToString(), StackTrace = ex.StackTrace?.ToString(), CreadtedBy = 1, CreatedDate = new DateTime()};
-      //await _errorLogs.AddAsync(newError, cancellationToken);
+      await _errorLogger.SaveErrotrLogAsync(ex.Message, ex.GetBaseException().Message, ex.StackTrace??"trace", 1, "createUser");
       return new Users{ Email="", FirstName="", LastName=""};
       
-    }
-
-    
+    }    
   }
 }

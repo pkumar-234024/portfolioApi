@@ -13,6 +13,7 @@ using Module = Autofac.Module;
 using Portfolio.Core.Modal;
 using Portfolio.UseCases.User.List;
 using Portfolio.Infrastructure.Errors;
+using Autofac.Core;
 
 namespace Portfolio.Infrastructure;
 
@@ -81,7 +82,6 @@ public class AutofacInfrastructureModule : Module
 
   private void RegisterMediatR(ContainerBuilder builder)
   {
-
     builder
       .RegisterType<Mediator>()
       .As<IMediator>()

@@ -5,10 +5,10 @@ namespace Portfolio.Core.Modal;
 
 public class Users : EntityBase, IAggregateRoot
 {
-  public Users()
-  {
+  //public Users()
+  //{
 
-  }
+  //}
   [Required]
   public required string FirstName { get; set; }
 

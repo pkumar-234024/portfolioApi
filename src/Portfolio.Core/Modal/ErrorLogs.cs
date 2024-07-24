@@ -11,7 +11,8 @@ public class ErrorLogs :EntityBase,IAggregateRoot
 {
   public string? Message { get; set; }
   public string? InnerMessage { get; set; }
-  public string? StackTrace { get; set; }
+  [Required]
+  public required string Description { get; set; }
   public string? ContollerName {  get; set; }
 
   public int? CreadtedBy { get; set; }

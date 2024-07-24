@@ -1,11 +1,7 @@
-﻿using Ardalis.SharedKernel;
-using Azure;
-using FastEndpoints;
+﻿using FastEndpoints;
 using MediatR;
 using Portfolio.Core.Modal;
-using Portfolio.UseCases.Contributors.Create;
 using Portfolio.UseCases.User.Create;
-using Portfolio.Web.Endpoints.ContributorEndpoints;
 
 namespace Portfolio.Web.UserEndPoints;
 public class Create : Endpoint<Users, Users>
@@ -32,7 +28,7 @@ public class Create : Endpoint<Users, Users>
     Users request,
     CancellationToken ct)
   {
-    var result = await _mediator.Send(new CreateUsersCommand(request));
+    var result = await _mediator.Send(new CreateUsersCommand(request.Id,request));
 
     if (result.IsSuccess)
     {

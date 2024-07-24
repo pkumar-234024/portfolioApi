@@ -20,11 +20,11 @@ public class ErrorMessageLogger : IErrorLogger
     _errorLogs = errorLogs;
     _logger = logger;
   }
-  public async Task SaveErrotrLogAsync(string? message, string? innerMessage, string? stackTrace, int? userId, string? contollerName)
+  public async Task SaveErrotrLogAsync(string? message, string? innerMessage, string description, int? userId, string? contollerName)
   {
     try
     {
-      var newError = new ErrorLogs { ContollerName=contollerName, CreatedDate=new DateTime()};
+      var newError = new ErrorLogs { Description=description, Message=message, InnerMessage=innerMessage, ContollerName=contollerName, CreadtedBy=userId};
       await _errorLogs.AddAsync(newError);
     }
     catch (Exception ex)
