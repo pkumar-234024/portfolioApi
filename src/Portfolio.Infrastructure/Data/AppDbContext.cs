@@ -23,6 +23,8 @@ public class AppDbContext : DbContext
 
   public DbSet<ProjectTechnologies> ProjectTechnologies => Set<ProjectTechnologies>();
 
+  public DbSet<ProjectsType> ProjectsType => Set<ProjectsType>();
+
   public DbSet<Skills> Skills => Set<Skills>();
 
 

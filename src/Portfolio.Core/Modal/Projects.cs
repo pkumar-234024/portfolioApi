@@ -15,15 +15,14 @@ public class Projects : EntityBase, IAggregateRoot
 
   [ForeignKey(nameof(ProjectsType))]
   [Required]
-  public int ProjectsType { get; set; }
+  public int? ProjectsType { get; set; }
 
   [ForeignKey(nameof(ProjectTechnologies))]
-  [Required]
-  public int ProjectTechnologies { get; set; }
+  public int? ProjectTechnologies { get; set; }
   public bool? IsStatus { get; set; }
 
   [ForeignKey(nameof(Users))]
-  public required int CreadtedBy { get; set;}
+  public int? CreadtedBy { get; set;}
 
   public DateTime CreatedDate { get; set;}
 
